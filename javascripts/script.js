@@ -5,6 +5,7 @@ let computerSelection;
 // *2 initialize player Score and Compute Score
 let playerScore = 0;
 let computerScore = 0;
+
 // *3 initialize computerSelections
 const computerSelections = Object.freeze({
   ROCK: "rock",
@@ -28,7 +29,7 @@ function getComputerSelection() {
 /**Simulate one round of Rock, Paper, Scissor Game
  * @param  {string} playerSelection rock, paper, scissor
  * @param  {string} computerSelection rock, paper, scissor
- * @return {number} cumulative Computer Score if computer win and vise versa
+ * @return {string} Display the result of the round
  */
 function playRound(playerSelection, computerSelection) {
   // * undefined or empty string
@@ -114,7 +115,7 @@ function playRound(playerSelection, computerSelection) {
 /**Start the game
  * @param  {number} rounds number of rounds to play
  */
-function game(rounds) {
+function startGame(rounds) {
   for (let index = 0; index < rounds; index++) {
     playerSelection = prompt("What is you choice ?")?.toLowerCase();
     computerSelection = getComputerSelection();
@@ -146,4 +147,4 @@ function resetGame() {
   computerScore = 0;
 }
 
-game(3);
+startGame(3);
