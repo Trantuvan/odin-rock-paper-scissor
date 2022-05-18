@@ -16,7 +16,7 @@ const computerSelections = Object.freeze({
 /**Generate Randomly Computer Selection
  * @return {string} rock or paper or scissor
  */
-function ComputerSelection() {
+function getComputerSelection() {
   // * Three shapes Rock, Paper, Scissor
   randomShape = Math.floor(
     Math.random() * Object.keys(computerSelections).length
@@ -114,10 +114,10 @@ function playRound(playerSelection, computerSelection) {
 /**Start the game
  * @param  {number} rounds number of rounds to play
  */
-function Game(rounds) {
+function game(rounds) {
   for (let index = 0; index < rounds; index++) {
     playerSelection = prompt("What is you choice ?")?.toLowerCase();
-    computerSelection = ComputerSelection();
+    computerSelection = getComputerSelection();
     playRound(playerSelection, computerSelection);
   }
 
@@ -146,4 +146,4 @@ function resetGame() {
   computerScore = 0;
 }
 
-Game(3);
+game(3);
