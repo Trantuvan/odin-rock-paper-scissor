@@ -112,19 +112,19 @@ function playRound(playerSelection, computerSelection) {
       break;
   }
 }
-/**Start the game
- * @param  {number} rounds number of rounds to play
- */
-function startGame(rounds) {
-  for (let index = 0; index < rounds; index++) {
-    playerSelection = prompt("What is you choice ?")?.toLowerCase();
-    computerSelection = getComputerSelection();
-    playRound(playerSelection, computerSelection);
-  }
+// /**Start the game
+//  * @param  {number} rounds number of rounds to play
+//  */
+// function startGame(rounds) {
+//   for (let index = 0; index < rounds; index++) {
+//     playerSelection = prompt("What is you choice ?")?.toLowerCase();
+//     computerSelection = getComputerSelection();
+//     playRound(playerSelection, computerSelection);
+//   }
 
-  checkTotalScores();
-  resetGame();
-}
+//   checkTotalScores();
+//   resetGame();
+// }
 
 /**Check the total scores after n rounds
  */
