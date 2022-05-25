@@ -106,7 +106,6 @@ HTML elements
   width: 900px;
   text-transform: uppercase;
   color: white;
-  display: flex;
   align-items: center;
   justify-content: space-between;
   display: none;
