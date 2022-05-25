@@ -12,9 +12,9 @@ const computerSelections = Object.freeze({
 });
 
 const imageLinks = Object.freeze({
-  ROCK: "../assets/img/Rock.png",
-  PAPER: "../assets/img/Paper.png",
-  SCISSOR: "../assets/img/Scissors.png",
+  ROCK: "./assets/img/Rock.png",
+  PAPER: "./assets/img/Paper.png",
+  SCISSOR: "./assets/img/Scissors.png",
 });
 
 /**Generate Randomly Computer Selection
