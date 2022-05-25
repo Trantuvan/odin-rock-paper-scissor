@@ -1,6 +1,7 @@
 /*---------------------------------------------------------------
  Global styles
 ----------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
 
 * {
   padding: 0;
@@ -9,7 +10,7 @@
 }
 
 body {
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: "Barlow Semi Condensed", sans-serif;
 }
 
 /*
@@ -30,6 +31,7 @@ HTML elements
   align-items: center;
 }
 
+/* Scoreboard */
 .scoreboard {
   width: 700px;
   height: 150px;
@@ -65,5 +67,36 @@ HTML elements
 .score > h1 {
   color: #565468;
   font-size: 56px;
-  font-family: "Barlow", sans-serif;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+/* Hands */
+.hands {
+  margin-top: 100px;
+  width: 476px;
+  height: 430px;
+  background-image: url(../img/triangle.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  column-gap: 40px;
+}
+
+.hands > .hand {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.hands > .hand:hover {
+  transform: translate3d(0, -8px, 0);
+}
+
+.hand > img {
+  width: 200px;
+  height: 200px;
+  display: block;
 }
