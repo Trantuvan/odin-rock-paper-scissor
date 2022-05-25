@@ -115,13 +115,19 @@ function playRound(playerSelection, computerSelection) {
  */
 function startGame(evt) {
   let runningScore = document.querySelector(".score > h1");
+  const modal = document.querySelector(".modal");
+  const overlay = document.querySelector(".overlay");
+  const modalBtn = document.querySelector(".modal > .btn");
 
   playerSelection = evt.target.getAttribute("data-user-choice");
   computerSelection = getComputerSelection();
 
-  // if (checkTotalScores() === true) {
-  //   resetGame();
-  // }
+  if (checkTotalScores() === true) {
+    modal.style.display = "block";
+    overlay.style.display = "block";
+
+    modalBtn.addEventListener("click", resetGame);
+  }
 
   // *Play 1 round
   playRound(playerSelection, computerSelection);
@@ -131,7 +137,11 @@ function startGame(evt) {
 /**Check the total scores after n rounds
  */
 function checkTotalScores() {
+  let modalMessage = document.querySelector(".modal-message");
   if (playerScore === 5 || computerScore === 5) {
+    if (playerScore < 5) {
+      modalMessage.textContent = "You Lose!";
+    }
     return true;
   }
 }
@@ -144,10 +154,18 @@ function resetGame() {
   computerScore = 0;
   const hands = document.querySelector(".hands");
   const contest = document.querySelector(".contest");
+  const modal = document.querySelector(".modal");
+  const overlay = document.querySelector(".overlay");
+  let runningScore = document.querySelector(".score > h1");
+
+  runningScore.textContent = playerScore;
 
   // *Hide hands div and show contest div
   hands.style.display = "flex";
   contest.style.display = "none";
+
+  modal.style.display = "none";
+  overlay.style.display = "none";
 }
 
 handList.forEach((hand) => {
